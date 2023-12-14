@@ -173,18 +173,17 @@ end
 
 begin :input_methods
   def input_left_paddle args
-    if args.inputs.controller_one.key_down.down  || args.inputs.keyboard.key_down.s
-      args.state.left_paddle.y -= 40
-    elsif args.inputs.controller_one.key_down.up || args.inputs.keyboard.key_down.w
-      args.state.left_paddle.y += 40
+    if args.inputs.controller_one.key_held.down  || args.inputs.keyboard.key_held.s
+      args.state.left_paddle.y -= 10
+    elsif args.inputs.controller_one.key_down.up || args.inputs.keyboard.key_held.w
+      args.state.left_paddle.y += 10
     end
   end
-
   def input_right_paddle args
-    if args.inputs.controller_two.key_down.down  || args.inputs.keyboard.key_down.l
-      args.state.right_paddle.y -= 40
-    elsif args.inputs.controller_two.key_down.up || args.inputs.keyboard.key_down.o
-      args.state.right_paddle.y += 40
+    if args.inputs.controller_two.key_down.down  || args.inputs.keyboard.key_held.l
+      args.state.right_paddle.y -= 10
+    elsif args.inputs.controller_two.key_down.up || args.inputs.keyboard.key_held.o
+      args.state.right_paddle.y += 10
     end
   end
 end
